@@ -1,4 +1,5 @@
 "# cassandra" 
+
 create keyspace my_keyspace with replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
 CREATE TABLE movie_by_actor ( actor TEXT, release_year INT, rovie_id UUID, title TEXT, genres SET<TEXT>, rating FLOAT, PRIMARY KEY ((actor), release_year, movie_id) ) WITH CLUSTERING ORDER BY ( release_year DSC, movie_id ASC);
